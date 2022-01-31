@@ -173,7 +173,6 @@ module.exports = {
     deleteProduct: async (req, res) => {
         try {
             if (req.dataUser.role == 'admin') {
-
                 let deleteSql = `UPDATE commerce.products SET status = 'Deleted' WHERE idproduct = ${db.escape(req.params.id)}`
                 let deleteProduct = await dbQuery(deleteSql)
                 res.status(200).send(deleteProduct)
